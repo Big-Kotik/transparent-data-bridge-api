@@ -1,1 +1,1 @@
-# transparent-data-bridge-proto
+# transparent-data-bridge-api
