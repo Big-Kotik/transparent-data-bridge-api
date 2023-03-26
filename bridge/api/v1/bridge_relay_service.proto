@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+import "common.proto";
+
+option java_multiple_files = true;
+
+option java_package = "com.bigkotik.transparentdatabridge";
+
+option go_package = "github.com/Big-Kotik/transparent-data-bridge-api/bridge/api/v1";
+
+service TransparentDataRelayService {
+  rpc RegisterServer(Auth) returns (stream SendFileRequest);
+  rpc ReceiveChunks(SendFileRequest) returns (stream FileChunk);
+}
+
+message Auth {
+  int32 id = 1;
+}
